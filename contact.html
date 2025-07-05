@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Silvère Martin</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">SM</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="dossier-open.html">Dossier Open</a></li>
+                <li><a href="passions.html">Passions</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="contact-container">
+        <div class="contact-header">
+            <h1 class="page-title">Contact</h1>
+            <p class="page-subtitle">Discutons de vos projets et opportunités</p>
+        </div>
+
+        <div class="contact-content">
+            <div class="contact-grid">
+                <!-- Informations de Contact -->
+                <section class="contact-info-section">
+                    <h2 class="section-title">📞 Mes Coordonnées</h2>
+                    <div class="contact-info-grid">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p>silvere.martin@esgi.fr</p>
+                                <a href="mailto:silvere.martin@esgi.fr" class="contact-link">Envoyer un email</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-details">
+                                <h3>Téléphone</h3>
+                                <p>+33 6 XX XX XX XX</p>
+                                <a href="tel:+336XXXXXXXX" class="contact-link">Appeler</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h3>Localisation</h3>
+                                <p>Paris, France</p>
+                                <span class="contact-note">Disponible pour déplacements</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">🎓</div>
+                            <div class="contact-details">
+                                <h3>Formation</h3>
+                                <p>ESGI - 2ème année</p>
+                                <span class="contact-note">Étudiant en informatique</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h3>Réseaux Sociaux</h3>
+                        <div class="social-grid">
+                            <a href="https://github.com/sidjel" target="_blank" class="social-link">
+                                <span class="social-icon">🐙</span>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://linkedin.com/in/silveremartin" target="_blank" class="social-link">
+                                <span class="social-icon">💼</span>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://twitter.com/silveremartin" target="_blank" class="social-link">
+                                <span class="social-icon">🐦</span>
+                                <span>Twitter</span>
+                            </a>
+                            <a href="https://discord.gg/silveremartin" target="_blank" class="social-link">
+                                <span class="social-icon">🎮</span>
+                                <span>Discord</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Formulaire de Contact -->
+                <section class="contact-form-section">
+                    <h2 class="section-title">💬 Envoyez-moi un Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Sujet *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Choisissez un sujet</option>
+                                <option value="projet">Projet de développement</option>
+                                <option value="collaboration">Collaboration</option>
+                                <option value="stage">Stage/Alternance</option>
+                                <option value="freelance">Mission freelance</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Décrivez votre projet ou votre demande..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Je souhaite recevoir des actualités sur mes projets</label>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <span class="btn-text">Envoyer le Message</span>
+                            <span class="btn-icon">📤</span>
+                        </button>
+                    </form>
+                </section>
+            </div>
+
+            <!-- Section Disponibilités -->
+            <section class="availability-section">
+                <h2 class="section-title">⏰ Mes Disponibilités</h2>
+                <div class="availability-grid">
+                    <div class="availability-card">
+                        <div class="availability-icon">🎓</div>
+                        <h3>Stage/Alternance</h3>
+                        <p>Recherche active d'opportunités de stage ou d'alternance en développement web/mobile</p>
+                        <div class="availability-details">
+                            <span class="detail">Durée: 3-6 mois</span>
+                            <span class="detail">Localisation: Paris/Remote</span>
+                            <span class="detail">Début: Septembre 2024</span>
+                        </div>
+                    </div>
+
+                    <div class="availability-card">
+                        <div class="availability-icon">💼</div>
+                        <h3>Freelance</h3>
+                        <p>Disponible pour des missions freelance en développement web et création d'applications</p>
+                        <div class="availability-details">
+                            <span class="detail">Type: Projets ponctuels</span>
+                            <span class="detail">Technologies: Full-Stack</span>
+                            <span class="detail">Tarif: Sur devis</span>
+                        </div>
+                    </div>
+
+                    <div class="availability-card">
+                        <div class="availability-icon">🤝</div>
+                        <h3>Collaboration</h3>
+                        <p>Ouvert aux collaborations sur des projets open source et innovations technologiques</p>
+                        <div class="availability-details">
+                            <span class="detail">Domaine: Open Source</span>
+                            <span class="detail">Type: Bénévolat</span>
+                            <span class="detail">Intérêt: IA, Jeux, Web3</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section FAQ -->
+            <section class="faq-section">
+                <h2 class="section-title">❓ Questions Fréquentes</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Quels types de projets acceptez-vous ?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Je suis ouvert à tous types de projets : développement web, applications mobiles, jeux vidéo, projets d'IA, et innovations technologiques. L'important est que le projet soit intéressant et challengeant !</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Quel est votre délai de réponse ?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Je réponds généralement dans les 24-48h. Pour les urgences, n'hésitez pas à préciser dans votre message !</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Proposez-vous des consultations gratuites ?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Oui, je propose une première consultation gratuite de 30 minutes pour discuter de votre projet et voir comment je peux vous aider.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Travaillez-vous à distance ?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolument ! Je suis habitué au travail à distance et utilise les outils modernes de collaboration (Git, Slack, Zoom, etc.).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Silvère Martin</h3>
+                    <p>Développeur passionné par l'innovation et la création d'expériences uniques.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="cv.html">CV</a></li>
+                        <li><a href="projets.html">Projets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📧 silvere.martin@esgi.fr</p>
+                    <p>🎓 Étudiant ESGI</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Silvère Martin - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Gestion du formulaire de contact
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Récupération des données du formulaire
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simulation d'envoi (remplacer par votre logique d'envoi)
+            console.log('Données du formulaire:', data);
+            
+            // Affichage d'un message de confirmation
+            alert('Merci pour votre message ! Je vous répondrai dans les plus brefs délais.');
+            
+            // Réinitialisation du formulaire
+            this.reset();
+        });
+
+        // Gestion des FAQ
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const toggle = this.querySelector('.faq-toggle');
+                
+                // Toggle de l'affichage
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                    toggle.textContent = '+';
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    toggle.textContent = '-';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

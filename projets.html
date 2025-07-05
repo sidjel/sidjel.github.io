@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets - Silvère Martin</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">SM</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="projets.html" class="active">Projets</a></li>
+                <li><a href="dossier-open.html">Dossier Open</a></li>
+                <li><a href="passions.html">Passions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="projects-container">
+        <div class="projects-header">
+            <h1 class="page-title">Mes Projets</h1>
+            <p class="page-subtitle">Découvrez mes réalisations techniques et créatives</p>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Projet Pokémon Évasion -->
+            <article class="project-card featured">
+                <div class="project-image">
+                    <div class="project-badge">Projet Principal</div>
+                    <div class="project-overlay">
+                        <button class="btn-view" onclick="showProjectDetails('pokemon')">Voir les détails</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h2>🎮 Pokémon Évasion</h2>
+                        <span class="project-year">2024</span>
+                    </div>
+                    <p class="project-description">
+                        Un jeu d'action/arcade 2D développé en C avec SDL2. Le joueur incarne un Pokémon qui doit échapper aux Poké Balls tout en collectant des items pour survivre le plus longtemps possible.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">C</span>
+                        <span class="tech-tag">SDL2</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">MinGW</span>
+                    </div>
+                    <div class="project-features">
+                        <span class="feature">6 Pokémon jouables</span>
+                        <span class="feature">3 arènes</span>
+                        <span class="feature">Système de score</span>
+                        <span class="feature">Classement MySQL</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Projet LocalO'Drive -->
+            <article class="project-card">
+                <div class="project-image">
+                    <div class="project-badge">E-commerce</div>
+                    <div class="project-overlay">
+                        <button class="btn-view" onclick="showProjectDetails('localodrive')">Voir les détails</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h2>🛒 LocalO'Drive</h2>
+                        <span class="project-year">2024</span>
+                    </div>
+                    <p class="project-description">
+                        Site e-commerce complet développé avec Symfony. Gestion des produits, panier d'achat, système de paiement et interface d'administration.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Symfony</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Twig</span>
+                    </div>
+                    <div class="project-features">
+                        <span class="feature">Catalogue produits</span>
+                        <span class="feature">Panier d'achat</span>
+                        <span class="feature">Paiement sécurisé</span>
+                        <span class="feature">Admin panel</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Projet Spotify Clone -->
+            <article class="project-card">
+                <div class="project-image">
+                    <div class="project-badge">Web App</div>
+                    <div class="project-overlay">
+                        <button class="btn-view" onclick="showProjectDetails('spotify')">Voir les détails</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h2>🎵 Spotify Clone</h2>
+                        <span class="project-year">2023</span>
+                    </div>
+                    <p class="project-description">
+                        Application de streaming musical inspirée de Spotify. Interface moderne avec authentification, gestion des playlists et lecteur audio.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                    <div class="project-features">
+                        <span class="feature">Authentification</span>
+                        <span class="feature">Playlists</span>
+                        <span class="feature">Lecteur audio</span>
+                        <span class="feature">Interface moderne</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Projet Jeu de Mémoire -->
+            <article class="project-card">
+                <div class="project-image">
+                    <div class="project-badge">React</div>
+                    <div class="project-overlay">
+                        <button class="btn-view" onclick="showProjectDetails('memory')">Voir les détails</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h2>🧠 Jeu de Mémoire</h2>
+                        <span class="project-year">2023</span>
+                    </div>
+                    <p class="project-description">
+                        Jeu de mémoire classique développé avec React. Interface intuitive avec animations, système de score et différents niveaux de difficulté.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">Hooks</span>
+                    </div>
+                    <div class="project-features">
+                        <span class="feature">Animations fluides</span>
+                        <span class="feature">Système de score</span>
+                        <span class="feature">Niveaux difficiles</span>
+                        <span class="feature">Responsive</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Projet Portfolio -->
+            <article class="project-card">
+                <div class="project-image">
+                    <div class="project-badge">Portfolio</div>
+                    <div class="project-overlay">
+                        <button class="btn-view" onclick="showProjectDetails('portfolio')">Voir les détails</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h2>💼 Portfolio Personnel</h2>
+                        <span class="project-year">2024</span>
+                    </div>
+                    <p class="project-description">
+                        Site portfolio moderne avec design responsive et animations. Présentation de mes projets et compétences techniques.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">GitHub Pages</span>
+                    </div>
+                    <div class="project-features">
+                        <span class="feature">Design moderne</span>
+                        <span class="feature">Animations CSS</span>
+                        <span class="feature">Responsive</span>
+                        <span class="feature">SEO optimisé</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Projet API REST -->
+            <article class="project-card">
+                <div class="project-image">
+                    <div class="project-badge">API</div>
+                    <div class="project-overlay">
+                        <button class="btn-view" onclick="showProjectDetails('api')">Voir les détails</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h2>🔌 API REST</h2>
+                        <span class="project-year">2023</span>
+                    </div>
+                    <p class="project-description">
+                        API REST complète avec authentification JWT, gestion des utilisateurs et documentation Swagger.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">JWT</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                    <div class="project-features">
+                        <span class="feature">Authentification</span>
+                        <span class="feature">CRUD complet</span>
+                        <span class="feature">Documentation</span>
+                        <span class="feature">Tests unitaires</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Section Statistiques -->
+        <section class="stats-section">
+            <div class="container">
+                <h2>Statistiques des Projets</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Projets Réalisés</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💻</div>
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Technologies Maîtrisées</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Taux de Réussite</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Heures de Code</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal pour les détails des projets -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Silvère Martin</h3>
+                    <p>Développeur passionné par l'innovation et la création d'expériences uniques.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="cv.html">CV</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📧 silvere.martin@esgi.fr</p>
+                    <p>🎓 Étudiant ESGI</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Silvère Martin - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Fonction étendue pour afficher les détails des projets
+        function showProjectDetails(projectType) {
+            let content = '';
+            
+            switch(projectType) {
+                case 'pokemon':
+                    content = `
+                        <h2>🎮 Pokémon Évasion - Détails Complets</h2>
+                        <div class="project-details">
+                            <h3>Description</h3>
+                            <p>Un jeu d'action/arcade 2D développé en C avec SDL2. Le joueur incarne un Pokémon qui doit échapper aux Poké Balls tout en collectant des items pour survivre.</p>
+                            
+                            <h3>Fonctionnalités Principales</h3>
+                            <ul>
+                                <li><strong>6 Pokémon jouables</strong> : Chaque Pokémon a ses propres statistiques et capacités</li>
+                                <li><strong>3 arènes différentes</strong> : Environnements variés avec obstacles uniques</li>
+                                <li><strong>Système de vie et score</strong> : Gestion de la santé et comptage des points</li>
+                                <li><strong>Timer et difficulté progressive</strong> : Le jeu devient plus difficile avec le temps</li>
+                                <li><strong>Attaques normale et chargée</strong> : Système de combat avec deux types d'attaques</li>
+                                <li><strong>Collecte d'items</strong> : Baies, Baies Dorées et Potions pour améliorer les performances</li>
+                                <li><strong>Classement MySQL</strong> : Sauvegarde des meilleurs scores en base de données</li>
+                                <li><strong>Contrôles multiples</strong> : Support clavier et souris</li>
+                            </ul>
+                            
+                            <h3>Technologies Utilisées</h3>
+                            <div class="tech-stack">
+                                <span class="tech-item">C</span>
+                                <span class="tech-item">SDL2</span>
+                                <span class="tech-item">SDL2_Image</span>
+                                <span class="tech-item">SDL2_Mixer</span>
+                                <span class="tech-item">SDL2_TTF</span>
+                                <span class="tech-item">MySQL</span>
+                                <span class="tech-item">MinGW</span>
+                            </div>
+                            
+                            <h3>Architecture</h3>
+                            <p>Le projet est développé dans un fichier C unique pour simplifier la compilation et le déploiement. L'architecture inclut :</p>
+                            <ul>
+                                <li>Gestion des états de jeu (menu, jeu, pause, game over)</li>
+                                <li>Système de rendu avec SDL2</li>
+                                <li>Gestion des collisions et physique</li>
+                                <li>Système audio avec effets sonores</li>
+                                <li>Interface utilisateur avec polices personnalisées</li>
+                                <li>Connexion à la base de données MySQL</li>
+                            </ul>
+                            
+                            <h3>Défis Techniques</h3>
+                            <ul>
+                                <li>Optimisation des performances pour un gameplay fluide</li>
+                                <li>Gestion de la mémoire avec SDL2</li>
+                                <li>Intégration de la base de données MySQL</li>
+                                <li>Cross-platform compatibility (Windows/Linux)</li>
+                            </ul>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'localodrive':
+                    content = `
+                        <h2>🛒 LocalO'Drive - E-commerce Complet</h2>
+                        <div class="project-details">
+                            <h3>Description</h3>
+                            <p>Site e-commerce complet développé avec Symfony. Gestion complète des produits, panier d'achat, système de paiement et interface d'administration.</p>
+                            
+                            <h3>Fonctionnalités Principales</h3>
+                            <ul>
+                                <li><strong>Catalogue de produits</strong> : Affichage dynamique avec filtres et recherche</li>
+                                <li><strong>Panier d'achat</strong> : Gestion des quantités et calcul automatique</li>
+                                <li><strong>Système de paiement</strong> : Intégration Stripe pour les transactions sécurisées</li>
+                                <li><strong>Interface d'administration</strong> : Gestion des produits, commandes et utilisateurs</li>
+                                <li><strong>Authentification</strong> : Système de connexion/inscription sécurisé</li>
+                                <li><strong>Gestion des commandes</strong> : Suivi des statuts et historique</li>
+                            </ul>
+                            
+                            <h3>Technologies Utilisées</h3>
+                            <div class="tech-stack">
+                                <span class="tech-item">Symfony 6</span>
+                                <span class="tech-item">PHP 8</span>
+                                <span class="tech-item">MySQL</span>
+                                <span class="tech-item">Twig</span>
+                                <span class="tech-item">Doctrine</span>
+                                <span class="tech-item">Stripe API</span>
+                            </div>
+                            
+                            <h3>Architecture</h3>
+                            <ul>
+                                <li>Architecture MVC avec Symfony</li>
+                                <li>Base de données relationnelle avec Doctrine ORM</li>
+                                <li>Interface utilisateur avec Twig et Bootstrap</li>
+                                <li>API REST pour les interactions dynamiques</li>
+                                <li>Système de cache pour optimiser les performances</li>
+                            </ul>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'spotify':
+                    content = `
+                        <h2>🎵 Spotify Clone - Application de Streaming</h2>
+                        <div class="project-details">
+                            <h3>Description</h3>
+                            <p>Application de streaming musical inspirée de Spotify. Interface moderne avec authentification, gestion des playlists et lecteur audio intégré.</p>
+                            
+                            <h3>Fonctionnalités Principales</h3>
+                            <ul>
+                                <li><strong>Authentification</strong> : Système de connexion/inscription avec JWT</li>
+                                <li><strong>Bibliothèque musicale</strong> : Gestion des artistes, albums et chansons</li>
+                                <li><strong>Playlists personnalisées</strong> : Création et gestion de playlists</li>
+                                <li><strong>Lecteur audio</strong> : Contrôles de lecture, pause, volume</li>
+                                <li><strong>Recherche avancée</strong> : Filtrage par artiste, album, genre</li>
+                                <li><strong>Interface responsive</strong> : Adaptation mobile et desktop</li>
+                            </ul>
+                            
+                            <h3>Technologies Utilisées</h3>
+                            <div class="tech-stack">
+                                <span class="tech-item">React 18</span>
+                                <span class="tech-item">Node.js</span>
+                                <span class="tech-item">Express</span>
+                                <span class="tech-item">MongoDB</span>
+                                <span class="tech-item">JWT</span>
+                                <span class="tech-item">Socket.io</span>
+                            </div>
+                            
+                            <h3>Architecture</h3>
+                            <ul>
+                                <li>Frontend React avec hooks et context API</li>
+                                <li>Backend Node.js avec Express</li>
+                                <li>Base de données NoSQL avec MongoDB</li>
+                                <li>Authentification JWT sécurisée</li>
+                                <li>Temps réel avec Socket.io</li>
+                            </ul>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'memory':
+                    content = `
+                        <h2>🧠 Jeu de Mémoire - Application React</h2>
+                        <div class="project-details">
+                            <h3>Description</h3>
+                            <p>Jeu de mémoire classique développé avec React. Interface intuitive avec animations, système de score et différents niveaux de difficulté.</p>
+                            
+                            <h3>Fonctionnalités Principales</h3>
+                            <ul>
+                                <li><strong>Niveaux de difficulté</strong> : 3 niveaux avec différentes tailles de grille</li>
+                                <li><strong>Système de score</strong> : Comptage des coups et temps</li>
+                                <li><strong>Animations fluides</strong> : Transitions CSS et animations React</li>
+                                <li><strong>Interface responsive</strong> : Adaptation mobile et desktop</li>
+                                <li><strong>Historique des scores</strong> : Sauvegarde locale des meilleurs temps</li>
+                            </ul>
+                            
+                            <h3>Technologies Utilisées</h3>
+                            <div class="tech-stack">
+                                <span class="tech-item">React 18</span>
+                                <span class="tech-item">JavaScript ES6+</span>
+                                <span class="tech-item">CSS3</span>
+                                <span class="tech-item">Hooks</span>
+                                <span class="tech-item">LocalStorage</span>
+                            </div>
+                            
+                            <h3>Architecture</h3>
+                            <ul>
+                                <li>Composants React fonctionnels avec hooks</li>
+                                <li>Gestion d'état avec useState et useContext</li>
+                                <li>Animations CSS avec transitions</li>
+                                <li>Persistance des données avec LocalStorage</li>
+                                <li>Design responsive avec CSS Grid et Flexbox</li>
+                            </ul>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'portfolio':
+                    content = `
+                        <h2>💼 Portfolio Personnel - Site Web</h2>
+                        <div class="project-details">
+                            <h3>Description</h3>
+                            <p>Site portfolio moderne avec design responsive et animations. Présentation de mes projets et compétences techniques avec une interface utilisateur intuitive.</p>
+                            
+                            <h3>Fonctionnalités Principales</h3>
+                            <ul>
+                                <li><strong>Design moderne</strong> : Interface épurée avec animations CSS</li>
+                                <li><strong>Responsive design</strong> : Adaptation parfaite mobile/desktop</li>
+                                <li><strong>Animations fluides</strong> : Transitions et effets visuels</li>
+                                <li><strong>Navigation intuitive</strong> : Menu hamburger et smooth scroll</li>
+                                <li><strong>SEO optimisé</strong> : Meta tags et structure sémantique</li>
+                                <li><strong>Performance optimisée</strong> : Chargement rapide et optimisation</li>
+                            </ul>
+                            
+                            <h3>Technologies Utilisées</h3>
+                            <div class="tech-stack">
+                                <span class="tech-item">HTML5</span>
+                                <span class="tech-item">CSS3</span>
+                                <span class="tech-item">JavaScript</span>
+                                <span class="tech-item">GitHub Pages</span>
+                                <span class="tech-item">Google Fonts</span>
+                            </div>
+                            
+                            <h3>Architecture</h3>
+                            <ul>
+                                <li>Structure HTML sémantique</li>
+                                <li>CSS avec variables et animations</li>
+                                <li>JavaScript vanilla pour les interactions</li>
+                                <li>Hébergement sur GitHub Pages</li>
+                                <li>Optimisation des performances</li>
+                            </ul>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'api':
+                    content = `
+                        <h2>🔌 API REST - Backend Node.js</h2>
+                        <div class="project-details">
+                            <h3>Description</h3>
+                            <p>API REST complète avec authentification JWT, gestion des utilisateurs et documentation Swagger. Backend robuste pour applications web et mobiles.</p>
+                            
+                            <h3>Fonctionnalités Principales</h3>
+                            <ul>
+                                <li><strong>Authentification JWT</strong> : Système de connexion sécurisé</li>
+                                <li><strong>CRUD complet</strong> : Opérations Create, Read, Update, Delete</li>
+                                <li><strong>Validation des données</strong> : Vérification des entrées utilisateur</li>
+                                <li><strong>Documentation Swagger</strong> : API documentation interactive</li>
+                                <li><strong>Tests unitaires</strong> : Couverture de code avec Jest</li>
+                                <li><strong>Middleware de sécurité</strong> : Protection contre les attaques</li>
+                            </ul>
+                            
+                            <h3>Technologies Utilisées</h3>
+                            <div class="tech-stack">
+                                <span class="tech-item">Node.js</span>
+                                <span class="tech-item">Express</span>
+                                <span class="tech-item">MongoDB</span>
+                                <span class="tech-item">JWT</span>
+                                <span class="tech-item">Swagger</span>
+                                <span class="tech-item">Jest</span>
+                            </div>
+                            
+                            <h3>Architecture</h3>
+                            <ul>
+                                <li>Architecture MVC avec Express</li>
+                                <li>Base de données NoSQL avec MongoDB</li>
+                                <li>Authentification JWT sécurisée</li>
+                                <li>Middleware pour la validation et sécurité</li>
+                                <li>Tests automatisés avec Jest</li>
+                            </ul>
+                        </div>
+                    `;
+                    break;
+            }
+            
+            modalContent.innerHTML = content;
+            modal.style.display = "block";
+        }
+    </script>
+</body>
+</html> 

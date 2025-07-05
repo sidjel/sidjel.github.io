@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silvère Martin - Développeur & Créateur de Jeux</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">SM</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="dossier-open.html">Dossier Open</a></li>
+                <li><a href="passions.html">Passions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="glitch" data-text="Silvère Martin">Silvère Martin</h1>
+                <p class="subtitle">Développeur Full-Stack & Créateur de Jeux</p>
+                <p class="description">
+                    Passionné par l'innovation technologique et la création d'expériences interactives. 
+                    Spécialisé dans le développement web moderne et la programmation système.
+                </p>
+            </div>
+            
+            <div class="featured-project">
+                <div class="project-card pokemon-card">
+                    <div class="card-header">
+                        <h2>🎮 Pokémon Évasion</h2>
+                        <span class="tech-badge">C/SDL2</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Un jeu d'action/arcade 2D où vous incarnez un Pokémon fuyant les Poké Balls. 
+                           Collectez des baies, évitez les obstacles et survivez le plus longtemps possible !</p>
+                        <div class="game-features">
+                            <span class="feature">6 Pokémon jouables</span>
+                            <span class="feature">3 arènes</span>
+                            <span class="feature">Système de score</span>
+                            <span class="feature">Classement MySQL</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-primary" onclick="showProjectDetails('pokemon')">Voir les détails</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+            <p>Découvrez mes projets</p>
+        </div>
+    </main>
+
+    <section class="skills-section">
+        <div class="container">
+            <h2>Technologies Maîtrisées</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Symfony</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">API REST</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Système</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">SDL2</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Silvère Martin</h3>
+                    <p>Développeur passionné par l'innovation et la création d'expériences uniques.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="cv.html">CV</a></li>
+                        <li><a href="projets.html">Projets</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📧 silvere.martin@esgi.fr</p>
+                    <p>🎓 Étudiant ESGI</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Silvère Martin - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal pour les détails du projet -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
