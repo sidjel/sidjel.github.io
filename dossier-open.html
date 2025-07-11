@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .accordion-toggle { cursor: pointer; margin: 1rem 0; background: #222; color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 5px; }
+        .accordion-toggle:focus { outline: 2px solid #4e8cff; }
+        .accordion-content.open { max-height: 1000px; transition: max-height 0.5s ease; }
+    </style>
 </head>
 <body>
     <div class="stars"></div>
@@ -22,7 +30,6 @@
                 <li><a href="cv.html">CV</a></li>
                 <li><a href="projets.html">Projets</a></li>
                 <li><a href="dossier-open.html" class="active">Dossier Open</a></li>
-                <li><a href="passions.html">Passions</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -33,272 +40,210 @@
         </div>
     </nav>
 
-    <main class="open-container">
-        <div class="open-header">
-            <h1 class="page-title">Dossier Open Source</h1>
-            <p class="page-subtitle">Mes contributions et projets open source</p>
+    <main class="open-container container">
+        <div class="open-header card">
+            <h1 class="page-title">Dossier Open ESGI</h1>
+            <p class="page-subtitle">Synthèse des actions et expériences - Silvère Martin</p>
         </div>
 
-        <div class="open-content">
-            <!-- Section Philosophie Open Source -->
-            <section class="open-section">
-                <h2 class="section-title">💡 Ma Philosophie Open Source</h2>
-                <div class="section-content">
-                    <p>Je crois fermement au pouvoir de l'open source pour démocratiser l'accès à la technologie et favoriser l'innovation collaborative. L'open source représente pour moi :</p>
-                    <div class="philosophy-grid">
-                        <div class="philosophy-item">
-                            <span class="philosophy-icon">🤝</span>
-                            <h3>Collaboration</h3>
-                            <p>Travailler ensemble pour créer des solutions meilleures</p>
-                        </div>
-                        <div class="philosophy-item">
-                            <span class="philosophy-icon">🎓</span>
-                            <h3>Apprentissage</h3>
-                            <p>Partager les connaissances et apprendre des autres</p>
-                        </div>
-                        <div class="philosophy-item">
-                            <span class="philosophy-icon">🌍</span>
-                            <h3>Impact</h3>
-                            <p>Contribuer à des projets qui bénéficient à la communauté</p>
-                        </div>
-                        <div class="philosophy-item">
-                            <span class="philosophy-icon">🔧</span>
-                            <h3>Innovation</h3>
-                            <p>Développer des outils et solutions innovantes</p>
-                        </div>
+        <!-- Présentation du programme Open -->
+        <section class="open-section card">
+            <h2 class="section-title">🌍 Présentation du programme Open</h2>
+            <div class="section-content">
+                <p>Le programme Open de l'ESGI vise à ouvrir l'esprit des étudiants à travers des activités variées, favorisant la communication, l'initiative, la créativité, le travail en équipe et l'ouverture sur le monde professionnel, social et culturel.</p>
+                <ul class="open-axes-list">
+                    <li><b>Entreprise</b> : Préparer l'avenir professionnel, développer son réseau.</li>
+                    <li><b>Esprit d'équipe</b> : Solidarité, convivialité, travail en groupe.</li>
+                    <li><b>Challenge</b> : Se dépasser, viser l'excellence, gérer des projets ambitieux.</li>
+                    <li><b>Communication</b> : Améliorer son expression écrite/orale, relationnel, écoute.</li>
+                    <li><b>Ouverture sur l'extérieur</b> : Découverte culturelle, sociale, professionnelle.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Onglets Semestre 2 / Semestre 3 -->
+        <div class="tabs card" style="margin-bottom:2rem;">
+            <button class="tab-btn active" data-tab="sem2">Semestre 2</button>
+            <button class="tab-btn" data-tab="sem3">Semestre 3</button>
+        </div>
+
+        <!-- Contenu des Semestres -->
+        <div class="tab-content active" id="sem2">
+            <h2 class="section-title">Actions réalisées - Semestre 2</h2>
+            <div class="open-actions-grid">
+                <!-- Cosmocité -->
+                <div class="open-action card">
+                    <div class="action-header">
+                        <span class="action-badge">Culture</span>
+                        <h3>Cosmocité - Centre culturel au Pont-de-Claix</h3>
+                        <span class="action-opens">1,5 Open</span>
+                        <span class="action-justif">Justificatif : Oui</span>
+                    </div>
+                    <button class="accordion-toggle">Voir la description</button>
+                    <div class="accordion-content">
+                        <p>J'ai visité Cosmocité, un centre culturel dédié à la science situé au Pont-de-Claix. Ce lieu fascinant, installé sur le site des anciens Grands Moulins de Villancourt, rend accessibles les merveilles et les mystères de la Terre et de l'univers de manière ludique et interactive. J'ai particulièrement apprécié le planétarium et les expositions immersives qui offrent une expérience unique. Le belvédère avec vue panoramique sur les montagnes est également un point fort.<br>Cette visite a été à la fois amusante et très enrichissante !</p>
                     </div>
                 </div>
-            </section>
-
-            <!-- Section Projets Open Source -->
-            <section class="open-section">
-                <h2 class="section-title">🚀 Mes Projets Open Source</h2>
-                <div class="projects-grid">
-                    <article class="open-project">
-                        <div class="project-header">
-                            <h3>🎮 Pokémon Évasion Engine</h3>
-                            <span class="project-status">En développement</span>
-                        </div>
-                        <p class="project-description">
-                            Moteur de jeu 2D open source basé sur SDL2, permettant de créer facilement des jeux d'action/arcade.
-                        </p>
-                        <div class="project-details">
-                            <div class="detail-item">
-                                <span class="detail-label">Repository:</span>
-                                <a href="https://github.com/sidjel/pokemon-evasion-engine" target="_blank">GitHub</a>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Licence:</span>
-                                <span>MIT</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Stars:</span>
-                                <span>⭐ 12</span>
-                            </div>
-                        </div>
-                        <div class="project-features">
-                            <span class="feature">Moteur 2D</span>
-                            <span class="feature">Gestion des collisions</span>
-                            <span class="feature">Système audio</span>
-                            <span class="feature">Documentation complète</span>
-                        </div>
-                    </article>
-
-                    <article class="open-project">
-                        <div class="project-header">
-                            <h3>📚 React Learning Kit</h3>
-                            <span class="project-status">Maintenu</span>
-                        </div>
-                        <p class="project-description">
-                            Kit d'apprentissage React avec exemples pratiques, exercices et bonnes pratiques pour débutants.
-                        </p>
-                        <div class="project-details">
-                            <div class="detail-item">
-                                <span class="detail-label">Repository:</span>
-                                <a href="https://github.com/sidjel/react-learning-kit" target="_blank">GitHub</a>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Licence:</span>
-                                <span>Apache 2.0</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Forks:</span>
-                                <span>🔀 8</span>
-                            </div>
-                        </div>
-                        <div class="project-features">
-                            <span class="feature">Tutoriels</span>
-                            <span class="feature">Exemples pratiques</span>
-                            <span class="feature">Exercices</span>
-                            <span class="feature">Bonnes pratiques</span>
-                        </div>
-                    </article>
-
-                    <article class="open-project">
-                        <div class="project-header">
-                            <h3>🎨 CSS Animation Library</h3>
-                            <span class="project-status">Stable</span>
-                        </div>
-                        <p class="project-description">
-                            Bibliothèque CSS d'animations modernes et réutilisables pour améliorer l'expérience utilisateur.
-                        </p>
-                        <div class="project-details">
-                            <div class="detail-item">
-                                <span class="detail-label">Repository:</span>
-                                <a href="https://github.com/sidjel/css-animations" target="_blank">GitHub</a>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Licence:</span>
-                                <span>MIT</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Downloads:</span>
-                                <span>📦 1.2k</span>
-                            </div>
-                        </div>
-                        <div class="project-features">
-                            <span class="feature">Animations fluides</span>
-                            <span class="feature">Responsive</span>
-                            <span class="feature">Performance optimisée</span>
-                            <span class="feature">Documentation</span>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <!-- Section Contributions -->
-            <section class="open-section">
-                <h2 class="section-title">🤝 Mes Contributions</h2>
-                <div class="contributions-grid">
-                    <article class="contribution-item">
-                        <div class="contribution-header">
-                            <h3>📖 Documentation Symfony</h3>
-                            <span class="contribution-type">Documentation</span>
-                        </div>
-                        <p>Amélioration de la documentation française de Symfony, traduction de sections techniques et ajout d'exemples pratiques.</p>
-                        <div class="contribution-stats">
-                            <span>📝 15 commits</span>
-                            <span>🌐 Traduction FR</span>
-                            <span>📚 Documentation</span>
-                        </div>
-                    </article>
-
-                    <article class="contribution-item">
-                        <div class="contribution-header">
-                            <h3>🐛 Bug Fixes - React</h3>
-                            <span class="contribution-type">Bug Fix</span>
-                        </div>
-                        <p>Correction de bugs dans la bibliothèque React, amélioration des performances et résolution de problèmes de compatibilité.</p>
-                        <div class="contribution-stats">
-                            <span>🔧 8 PRs</span>
-                            <span>🐛 Bug fixes</span>
-                            <span>⚡ Performance</span>
-                        </div>
-                    </article>
-
-                    <article class="contribution-item">
-                        <div class="contribution-header">
-                            <h3>🎨 UI Components - Bootstrap</h3>
-                            <span class="contribution-type">Feature</span>
-                        </div>
-                        <p>Ajout de nouveaux composants UI pour Bootstrap, amélioration de l'accessibilité et ajout de fonctionnalités modernes.</p>
-                        <div class="contribution-stats">
-                            <span>✨ 5 features</span>
-                            <span>♿ Accessibilité</span>
-                            <span>🎨 UI/UX</span>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <!-- Section Communautés -->
-            <section class="open-section">
-                <h2 class="section-title">👥 Communautés & Événements</h2>
-                <div class="communities-grid">
-                    <div class="community-item">
-                        <div class="community-icon">🐙</div>
-                        <h3>GitHub</h3>
-                        <p>Membre actif depuis 2022</p>
-                        <ul class="community-stats">
-                            <li>📊 25+ repositories</li>
-                            <li>⭐ 150+ stars reçues</li>
-                            <li>🔀 30+ forks</li>
-                        </ul>
+                <!-- Jardin Ferroviaire & Musical -->
+                <div class="open-action card">
+                    <div class="action-header">
+                        <span class="action-badge">Art / Parc</span>
+                        <h3>Le Jardin Ferroviaire & Musical</h3>
+                        <span class="action-opens">1,5 Open</span>
+                        <span class="action-justif">Justificatif : Oui</span>
                     </div>
-
-                    <div class="community-item">
-                        <div class="community-icon">💬</div>
-                        <h3>Stack Overflow</h3>
-                        <p>Contributeur régulier</p>
-                        <ul class="community-stats">
-                            <li>❓ 50+ questions répondues</li>
-                            <li>✅ 80% de taux d'acceptation</li>
-                            <li>🏆 2.5k+ points de réputation</li>
-                        </ul>
-                    </div>
-
-                    <div class="community-item">
-                        <div class="community-icon">🎪</div>
-                        <h3>Meetups Tech</h3>
-                        <p>Participant et speaker</p>
-                        <ul class="community-stats">
-                            <li>🎤 3 présentations</li>
-                            <li>📅 15+ événements</li>
-                            <li>🤝 Networking actif</li>
-                        </ul>
-                    </div>
-
-                    <div class="community-item">
-                        <div class="community-icon">📚</div>
-                        <h3>Documentation</h3>
-                        <p>Contributeur documentation</p>
-                        <ul class="community-stats">
-                            <li>📖 10+ projets</li>
-                            <li>🌐 3 langues</li>
-                            <li>📝 100+ contributions</li>
-                        </ul>
+                    <button class="accordion-toggle">Voir la description</button>
+                    <div class="accordion-content">
+                        <p>J'ai adoré ma visite au Jardin Ferroviaire & Musical avec mon fils de 2 ans. L'ambiance est magique avec les trains miniatures, les reconstitutions de villes et villages, les mini-jeux et le nouvel espace d'expérience musicale. Ce jardin paysager, inspiré du style japonais, est un véritable monde miniature où les détails des maquettes sont impressionnants. Les scènes humoristiques et les clins d'oeil cinématographiques ajoutent une touche ludique à la visite. Le cadre est très agréable pour une balade en famille.<br>Une expérience à ne pas manquer !</p>
                     </div>
                 </div>
-            </section>
-
-            <!-- Section Statistiques -->
-            <section class="open-section">
-                <h2 class="section-title">📊 Statistiques Open Source</h2>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon">📦</div>
-                        <div class="stat-number">25+</div>
-                        <div class="stat-label">Repositories</div>
+                <!-- Jardin des fontaines pétrifiantes -->
+                <div class="open-action card">
+                    <div class="action-header">
+                        <span class="action-badge">Jardin botanique</span>
+                        <h3>Jardin des fontaines pétrifiantes</h3>
+                        <span class="action-opens">1,5 Open</span>
+                        <span class="action-justif">Justificatif : Oui</span>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">⭐</div>
-                        <div class="stat-number">150+</div>
-                        <div class="stat-label">Stars Reçues</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">🔀</div>
-                        <div class="stat-number">30+</div>
-                        <div class="stat-label">Forks</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">📝</div>
-                        <div class="stat-number">100+</div>
-                        <div class="stat-label">Contributions</div>
+                    <button class="accordion-toggle">Voir la description</button>
+                    <div class="accordion-content">
+                        <p>Ma visite, avec mon amie, au Jardin des Fontaines Pétrifiantes, un magnifique jardin botanique en Isère, a été une expérience merveilleuse. Les paysages sont époustouflants et la diversité des plantes est impressionnante. Chaque coin du jardin offre une nouvelle découverte, rendant la balade très enrichissante.<br>Un lieu idéal pour se détendre et se reconnecter avec la nature.</p>
                     </div>
                 </div>
-            </section>
-
-            <!-- Section Call to Action -->
-            <section class="open-section cta-section">
-                <h2 class="section-title">🚀 Rejoignez l'Aventure Open Source</h2>
-                <div class="cta-content">
-                    <p>Passionné par l'open source ? Découvrez mes projets et contribuez à l'écosystème technologique !</p>
-                    <div class="cta-buttons">
-                        <a href="https://github.com/sidjel" target="_blank" class="btn-primary">Voir mon GitHub</a>
-                        <a href="contact.html" class="btn-secondary">Me Contacter</a>
+                <!-- Arizona Kids -->
+                <div class="open-action card">
+                    <div class="action-header">
+                        <span class="action-badge">Parc de jeux</span>
+                        <h3>Arizona Kids</h3>
+                        <span class="action-opens">1,5 Open</span>
+                        <span class="action-justif">Justificatif : Oui</span>
+                    </div>
+                    <button class="accordion-toggle">Voir la description</button>
+                    <div class="accordion-content">
+                        <p>J'ai passé un excellent moment avec mon fils de 2 ans à Arizona Kids, un parc de jeux couvert (avec restauration) à Saint-Égrève. Les installations sont variées et adaptées aux jeunes enfants, offrant un espace sûr et amusant pour jouer. L'ambiance est conviviale et le personnel est très accueillant.<br>Une sortie idéale pour les familles !</p>
                     </div>
                 </div>
-            </section>
+                <!-- Elfy Park -->
+                <div class="open-action card">
+                    <div class="action-header">
+                        <span class="action-badge">Parc à thème</span>
+                        <h3>Elfy Park</h3>
+                        <span class="action-opens">1,5 Open</span>
+                        <span class="action-justif">Justificatif : Oui</span>
+                    </div>
+                    <button class="accordion-toggle">Voir la description</button>
+                    <div class="accordion-content">
+                        <p>J'ai passé un moment fantastique avec mon fils de 2 ans au Elfy Park, un parc à thème en pleine nature près de Crolles en Isère. Le cadre naturel est magnifique et les activités sont parfaitement adaptées aux jeunes enfants. L'ambiance est magique et le personnel est très accueillant.<br>Une sortie idéale pour profiter de la nature en famille !</p>
+                    </div>
+                </div>
+                <!-- Alternance Cegelec CEM -->
+                <div class="open-action card">
+                    <div class="action-header">
+                        <span class="action-badge">Entreprise</span>
+                        <h3>Alternance - Cegelec CEM</h3>
+                        <span class="action-opens">8 Opens</span>
+                        <span class="action-justif">Justificatif : Oui</span>
+                    </div>
+                    <button class="accordion-toggle">Voir la description</button>
+                    <div class="accordion-content">
+                        <p>Durant ma deuxième année d'alternance chez Cegelec CEM à Montbonnot-Saint-Martin en Isère, j'ai travaillé sur la digitalisation des processus métier liés aux services de sécurité nucléaire, d'inspection et de qualité. Mon rôle consiste à utiliser le logiciel TeePee du groupe pour optimiser et moderniser ces processus.<br>Cegelec CEM, filiale de VINCI Energies, est spécialisée dans la conception et la réalisation de systèmes électromécaniques pour des secteurs à fortes contraintes, notamment le nucléaire.<br>Cette expérience m'a permis de développer des compétences en gestion de projet et en transformation digitale, tout en renforçant ma compréhension des exigences spécifiques du secteur nucléaire.<br><a href="https://www.cegelec-cem.fr/" target="_blank">Site de l'entreprise</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Conclusion S2 -->
+            <div class="open-section card" style="margin-top:2rem;">
+                <h3>Conclusion Semestre 2</h3>
+                <p>Le programme Open m'a offert l'opportunité de participer à diverses activités enrichissantes et de découvrir de nouveaux lieux intéressants avec mon amie et mon fils. Ces expériences ont renforcé mes valeurs familiales et sociales, ainsi que mon ouverture d'esprit et à la culture. Elles m'ont également permis de prendre du recul et de me détendre. J'ai pu améliorer mes compétences en organisation, notamment en planifiant et en rédigeant ce rapport. Je suis reconnaissant pour ces opportunités qui ont enrichi mon parcours au sein du Campus Eductive de Grenoble.</p>
+            </div>
+        </div>
+
+        <div class="tab-content" id="sem3">
+            <h2 class="section-title">Actions réalisées - Semestre 3</h2>
+            <div class="open-actions-grid">
+                <!-- Création jeu vidéo 2D -->
+                <div class="open-action card">
+                    <div class="action-header">
+                        <span class="action-badge">Projet personnel</span>
+                        <h3>Création d’un jeu vidéo 2D : Pokémon Évasion</h3>
+                        <span class="action-opens">4 Opens</span>
+                        <span class="action-justif">Justificatif : Captures écrans</span>
+                    </div>
+                    <button class="accordion-toggle">Voir la description</button>
+                    <div class="accordion-content">
+                        <p><b>Nom du Projet :</b> Pokémon Évasion<br><br>Pokémon Évasion, c'est mon projet de jeu en C/SDL2. Le but, c'est du fun, direct et arcade : on prend un Pokémon et on essaie de survivre le plus longtemps possible. Faut esquiver des Poké Balls qui arrivent de tous les côtés, tout en chopant des baies pour le score et des potions pour pas mourir. C'est un petit défouloir, simple à prendre en main mais difficile à maîtriser.<br>Le jeu contient 6 Pokémon différents, 3 arènes, plusieurs niveaux de difficulté, et un classement en ligne pour voir qui fait le meilleur score. On peut y jouer au clavier, à la souris ou à la manette.<br><br><b>L'histoire derrière le projet :</b><br>Tout a commencé avec un simple TP de programmation en C à l'école. On devait créer les bases d'un petit jeu. J'ai tout de suite accroché, et au lieu de m'arrêter là, j'ai décidé de le transformer en un vrai projet personnel.<br>Ce projet, j'y ai mis tout mon temps. Vraiment. Il y a eu pas mal de jours (et de nuits) à coder des nouvelles idées, à galérer sur des animations, à intégrer des sons, et surtout, à chasser des bugs qui me rendaient fou ! C'était un vrai défi, mais c'est devenu une passion.<br>Au final, ce jeu est né de l'envie de ne pas laisser un simple exercice de cours prendre la poussière. Je voulais voir jusqu'où je pouvais le pousser, pour en faire quelque chose d'amusant et qui me plaise vraiment. C'est de loin le projet sur lequel j'ai le plus appris, pas seulement techniquement, mais aussi sur ma capacité à m'investir à fond dans une idée qui me passionne.<br><br><b>Ce que j'en ai tiré :</b><br>Ce projet m'a appris bien plus que juste coder. J'ai vraiment dû tout gérer tout seul, de A à Z. De la conception du gameplay à l'intégration de bibliothèques comme SDL2, jusqu'à la partie la plus complexe pour moi : connecter le jeu à une base de données MySQL pour le classement. Au final, c'est devenu la preuve concrète de ce qui me motive : créer des trucs, trouver des solutions et transformer une simple idée en quelque chose de réel.</p>
+                    </div>
+                </div>
+                <!-- HeroFestival -->
+                <div class="open-action card">
+                    <div class="action-header">
+                        <span class="action-badge">Visite culturelle</span>
+                        <h3>Visite du HeroFestival</h3>
+                        <span class="action-opens">1,5 Open</span>
+                        <span class="action-justif">Justificatif : Billet</span>
+                    </div>
+                    <button class="accordion-toggle">Voir la description</button>
+                    <div class="accordion-content">
+                        <p>Dans le cadre de ce dossier, j'ai choisi de visiter le HeroFestival à Alpexpo Grenoble, et je ne m'attendais pas à une telle immersion. Sur plus de 10 000 m², c'était un véritable concentré de tout ce qui touche à la pop culture : jeux vidéo, mangas, séries, cinéma...<br>Ce qui m'a tout de suite plu, c'est l'ambiance. C'était très vivant et convivial. Partout où je regardais, il se passait quelque chose. Le festival était divisé en univers thématiques, ce qui permettait de passer d'un monde à l'autre très facilement. Un moment, j'étais au milieu des fans de Star Wars, et l'instant d'après, je découvrais une zone dédiée à Harry Potter, avec même une chasse aux Horcruxes organisée.<br>Le point fort, pour moi, c'était le contact humain. Que ce soit en discutant avec des créateurs sur leurs stands, en admirant le travail des cosplayeurs qui incarnaient leurs personnages favoris, ou en assistant à une rencontre avec des invités. Il y avait par exemple la comédienne qui fait la voix française de Buffy, ou encore la championne de Just Dance.<br>Cette visite m'a permis de voir à quel point ces univers, parfois considérés comme de "niche", sont en fait une culture riche et partagée par une immense communauté. C'était une expérience vraiment positive et une belle découverte culturelle.</p>
+                    </div>
+                </div>
+                <!-- Clash des écoles -->
+                <div class="open-action card">
+                    <div class="action-header">
+                        <span class="action-badge">Vie de l'école</span>
+                        <h3>Clash des écoles</h3>
+                        <span class="action-opens">1,5 Open</span>
+                        <span class="action-justif">Justificatif : Photo</span>
+                    </div>
+                    <button class="accordion-toggle">Voir la description</button>
+                    <div class="accordion-content">
+                        <p>Le "Clash des Écoles", c'était un super moment. Le principe du jeu : une course pour être le premier sur un buzzer et répondre à une question. Ça mettait une bonne ambiance, et avec mes potes Dimitri et Morgan, on était à fond pour encourager tout le monde. Il s'est mis à pleuvoir un peu, mais la bonne humeur était toujours là. Pour moi, le meilleur moment, ça a été le barbecue à la fin. Après toute l'effervescence des jeux, c'était génial de se retrouver tous ensemble pour manger et décompresser. C'est ce genre de moments qui créent vraiment des bons souvenirs.</p>
+                    </div>
+                </div>
+                <!-- Magie des automates -->
+                <div class="open-action card">
+                    <div class="action-header">
+                        <span class="action-badge">Musée</span>
+                        <h3>La Magie des automates</h3>
+                        <span class="action-opens">1,5 Open</span>
+                        <span class="action-justif">Justificatif : Photo</span>
+                    </div>
+                    <button class="accordion-toggle">Voir la description</button>
+                    <div class="accordion-content">
+                        <p>Pour une autre de mes sorties, j'ai choisi quelque chose de très différent en emmenant mon fils de deux ans et demi au Musée « La Magie des automates » à Lans-en-Vercors. Ce qui était génial, c'est qu'à l'entrée, on lui a donné une baguette magique pour réveiller les scènes les unes après les autres. Voir ses yeux s'illuminer à chaque fois qu'un décor s'animait grâce à sa baguette, c'était vraiment le meilleur moment. Le musée est rempli de saynètes miniatures avec des centaines de personnages qui bougent. C'était une visite vraiment douce et poétique, parfaite pour partager un moment magique avec un enfant.</p>
+                    </div>
+                </div>
+                <!-- Arizona Kids -->
+                <div class="open-action card">
+                    <div class="action-header">
+                        <span class="action-badge">Parc de jeux</span>
+                        <h3>Activités à Arizona Kids</h3>
+                        <span class="action-opens">1,5 Open</span>
+                        <span class="action-justif">Justificatif : Photo</span>
+                    </div>
+                    <button class="accordion-toggle">Voir la description</button>
+                    <div class="accordion-content">
+                        <p>Pour une sortie plus axée sur le jeu et l'amusement, j'ai emmené mon fils à Arizona Kids, un grand parc de jeux couvert sur le thème du Far West. Ce qui a rendu cette visite parfaite, c'est qu'il n'y avait presque personne ! On a pu explorer l'immense structure de jeux en toute tranquillité. Le meilleur souvenir, c'est le château de légo qu'on a bâti ensemble (voir photos), en prenant notre temps. Après s'être bien dépensés sur les trampolines et les voitures tamponneuses, on a mangé sur place, ce qui a rendu la journée très relaxante et complète.</p>
+                    </div>
+                </div>
+                <!-- Alternance Cegelec CEM -->
+                <div class="open-action card">
+                    <div class="action-header">
+                        <span class="action-badge">Entreprise</span>
+                        <h3>Alternance - Cegelec CEM</h3>
+                        <span class="action-opens">8 Opens</span>
+                        <span class="action-justif">Justificatif : Oui</span>
+                    </div>
+                    <button class="accordion-toggle">Voir la description</button>
+                    <div class="accordion-content">
+                        <p>Je réalise actuellement ma deuxième année d'alternance chez Cegelec CEM, une filiale de VINCI Energies spécialisée dans le nucléaire.<br>Mon projet principal consiste à moderniser les processus métier en utilisant un logiciel du groupe, TeePee. Je me concentre sur des domaines essentiels comme la sécurité et l'inspection.<br>Cette mission est une super opportunité pour moi : elle me permet de monter en compétence sur la gestion de projet et la transformation digitale, tout en découvrant un secteur très exigeant.<br><a href="https://www.cegelec-cem.fr/" target="_blank">Site de l'entreprise</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Conclusion S3 -->
+            <div class="open-section card" style="margin-top:2rem;">
+                <h3>Conclusion Semestre 3</h3>
+                <p>En regardant en arrière sur cette année, je vois que le programme Open a été bien plus qu'une simple obligation. Ça a été une véritable invitation à découvrir et à partager. Toutes ces activités, que ce soit une visite culturelle ou une journée de jeux avec mon fils, ont été précieuses. Elles m'ont permis de prendre du recul et de renforcer ce qui est important pour moi. Ces expériences sont une part importante de mon parcours et vont continuer à m'apporter, j'en suis sûr, pour la suite de mes études.</p>
+            </div>
         </div>
     </main>
 
@@ -330,5 +275,38 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Gestion des onglets
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+                document.getElementById(this.dataset.tab).classList.add('active');
+            });
+        });
+        // Accordéons pour les descriptions
+        document.querySelectorAll('.accordion-toggle').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                if (content.classList.contains('open')) {
+                    content.classList.remove('open');
+                    this.textContent = 'Voir la description';
+                } else {
+                    // Fermer tous les autres accordéons du même semestre
+                    document.querySelectorAll('.tab-content.active .accordion-content').forEach(c => {
+                        c.classList.remove('open');
+                        if (c.previousElementSibling && c.previousElementSibling.classList.contains('accordion-toggle')) {
+                            c.previousElementSibling.textContent = 'Voir la description';
+                        }
+                    });
+                    content.classList.add('open');
+                    this.textContent = 'Masquer la description';
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html> 

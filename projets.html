@@ -22,7 +22,6 @@
                 <li><a href="cv.html">CV</a></li>
                 <li><a href="projets.html" class="active">Projets</a></li>
                 <li><a href="dossier-open.html">Dossier Open</a></li>
-                <li><a href="passions.html">Passions</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -43,6 +42,8 @@
             <!-- Projet Pokémon Évasion -->
             <article class="project-card featured">
                 <div class="project-image">
+                    <!-- Galerie d'images Pokémon (générée dynamiquement) -->
+                    <div class="pokemon-gallery" id="mainPokemonGallery"></div>
                     <div class="project-badge">Projet Principal</div>
                     <div class="project-overlay">
                         <button class="btn-view" onclick="showProjectDetails('pokemon')">Voir les détails</button>
@@ -74,7 +75,7 @@
             <!-- Projet LocalO'Drive -->
             <article class="project-card">
                 <div class="project-image">
-                    <div class="project-badge">E-commerce</div>
+                    <div class="project-badge">Plateforme locale</div>
                     <div class="project-overlay">
                         <button class="btn-view" onclick="showProjectDetails('localodrive')">Voir les détails</button>
                     </div>
@@ -85,19 +86,21 @@
                         <span class="project-year">2024</span>
                     </div>
                     <p class="project-description">
-                        Site e-commerce complet développé avec Symfony. Gestion des produits, panier d'achat, système de paiement et interface d'administration.
+                        Plateforme web collaborative pour faciliter l’accès aux produits locaux en Auvergne-Rhône-Alpes. Connexion directe producteurs-consommateurs, gestion logistique, carte interactive, chatbot, paiement sécurisé.
                     </p>
                     <div class="project-tech">
-                        <span class="tech-tag">Symfony</span>
-                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">PHP 8.2</span>
+                        <span class="tech-tag">Node.js</span>
                         <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Twig</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Stripe</span>
+                        <span class="tech-tag">Botpress</span>
                     </div>
                     <div class="project-features">
-                        <span class="feature">Catalogue produits</span>
-                        <span class="feature">Panier d'achat</span>
+                        <span class="feature">Carte interactive</span>
+                        <span class="feature">Chatbot IA</span>
                         <span class="feature">Paiement sécurisé</span>
-                        <span class="feature">Admin panel</span>
+                        <span class="feature">Gestion producteurs</span>
                     </div>
                 </div>
             </article>
@@ -265,6 +268,14 @@
         </div>
     </div>
 
+    <!-- Lightbox pour images avec slider -->
+    <div id="imgLightbox" class="img-lightbox" style="display:none;">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <span class="arrow-lightbox left" onclick="slideLightbox(-1)">&#10094;</span>
+        <img id="lightboxImg" src="" alt="Agrandissement" />
+        <span class="arrow-lightbox right" onclick="slideLightbox(1)">&#10095;</span>
+    </div>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -294,6 +305,61 @@
 
     <script src="script.js"></script>
     <script>
+        // Liste des images Pokémon (à jour avec le dossier)
+        const pokemonImages = [
+            "assets/projet pokemon evasion/pokémon évasion 2.png",
+            "assets/projet pokemon evasion/pokémon évasion 3.png",
+            "assets/projet pokemon evasion/pokémon évasion 4.png",
+            "assets/projet pokemon evasion/pokémon évasion 5.png",
+            "assets/projet pokemon evasion/pokémon évasion 6.png",
+            "assets/projet pokemon evasion/pokémon évasion 7.png",
+            "assets/projet pokemon evasion/pokémon évasion.png"
+        ];
+
+        // Génère la galerie dans la carte principale
+        function renderPokemonGallery(containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            pokemonImages.forEach((src, idx) => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = `Pokémon ${idx+1}`;
+                img.className = 'gallery-thumb';
+                img.dataset.index = idx;
+                img.addEventListener('click', function() {
+                    openLightbox(idx);
+                });
+                container.appendChild(img);
+            });
+        }
+        // Appel initial pour la carte
+        renderPokemonGallery('mainPokemonGallery');
+
+        // Lightbox avec slider
+        let currentLightboxIndex = 0;
+        function openLightbox(idx) {
+            currentLightboxIndex = idx;
+            document.getElementById('lightboxImg').src = pokemonImages[idx];
+            document.getElementById('imgLightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('imgLightbox').style.display = 'none';
+        }
+        function slideLightbox(direction) {
+            currentLightboxIndex += direction;
+            if (currentLightboxIndex < 0) currentLightboxIndex = pokemonImages.length - 1;
+            if (currentLightboxIndex >= pokemonImages.length) currentLightboxIndex = 0;
+            document.getElementById('lightboxImg').src = pokemonImages[currentLightboxIndex];
+        }
+        // Navigation clavier (optionnel)
+        document.addEventListener('keydown', function(e) {
+            if (document.getElementById('imgLightbox').style.display === 'flex') {
+                if (e.key === 'ArrowLeft') slideLightbox(-1);
+                if (e.key === 'ArrowRight') slideLightbox(1);
+                if (e.key === 'Escape') closeLightbox();
+            }
+        });
+
         // Fonction étendue pour afficher les détails des projets
         function showProjectDetails(projectType) {
             let content = '';
@@ -302,6 +368,7 @@
                 case 'pokemon':
                     content = `
                         <h2>🎮 Pokémon Évasion - Détails Complets</h2>
+                        <div class="pokemon-gallery" id="modalPokemonGallery"></div>
                         <div class="project-details">
                             <h3>Description</h3>
                             <p>Un jeu d'action/arcade 2D développé en C avec SDL2. Le joueur incarne un Pokémon qui doit échapper aux Poké Balls tout en collectant des items pour survivre.</p>
@@ -353,38 +420,67 @@
                     
                 case 'localodrive':
                     content = `
-                        <h2>🛒 LocalO'Drive - E-commerce Complet</h2>
+                        <h2>🛒 LocalO'Drive - Détails du Projet</h2>
                         <div class="project-details">
-                            <h3>Description</h3>
-                            <p>Site e-commerce complet développé avec Symfony. Gestion complète des produits, panier d'achat, système de paiement et interface d'administration.</p>
-                            
-                            <h3>Fonctionnalités Principales</h3>
+                            <h3>Contexte & Avant-propos</h3>
+                            <p>
+                                Projet réalisé dans le cadre de la 2<sup>e</sup> année de Bachelor Informatique à l’ESGI Grenoble, en alternance.<br>
+                                Objectif : faciliter l’accès aux produits locaux via une plateforme numérique, valorisant le savoir-faire régional.<br>
+                                Client fictif : <strong>Local Network</strong> (association à but non lucratif).
+                            </p>
+                            <h3>L’Entreprise</h3>
                             <ul>
-                                <li><strong>Catalogue de produits</strong> : Affichage dynamique avec filtres et recherche</li>
-                                <li><strong>Panier d'achat</strong> : Gestion des quantités et calcul automatique</li>
-                                <li><strong>Système de paiement</strong> : Intégration Stripe pour les transactions sécurisées</li>
-                                <li><strong>Interface d'administration</strong> : Gestion des produits, commandes et utilisateurs</li>
-                                <li><strong>Authentification</strong> : Système de connexion/inscription sécurisé</li>
-                                <li><strong>Gestion des commandes</strong> : Suivi des statuts et historique</li>
+                                <li><strong>Mission :</strong> Connecter producteurs régionaux et consommateurs (circuits courts).</li>
+                                <li><strong>Besoins :</strong> Plateforme fiable, simplification logistique, élargir l’audience.</li>
+                                <li><strong>Ambitions :</strong> Leader régional, solution digitale innovante et accessible.</li>
                             </ul>
-                            
-                            <h3>Technologies Utilisées</h3>
-                            <div class="tech-stack">
-                                <span class="tech-item">Symfony 6</span>
-                                <span class="tech-item">PHP 8</span>
-                                <span class="tech-item">MySQL</span>
-                                <span class="tech-item">Twig</span>
-                                <span class="tech-item">Doctrine</span>
-                                <span class="tech-item">Stripe API</span>
-                            </div>
-                            
-                            <h3>Architecture</h3>
+                            <h3>L’Équipe</h3>
                             <ul>
-                                <li>Architecture MVC avec Symfony</li>
-                                <li>Base de données relationnelle avec Doctrine ORM</li>
-                                <li>Interface utilisateur avec Twig et Bootstrap</li>
-                                <li>API REST pour les interactions dynamiques</li>
-                                <li>Système de cache pour optimiser les performances</li>
+                                <li><strong>MARTIN Silvère</strong> : Rédacteur, Dev Frontend, RGPD, Coordinateur</li>
+                                <li><strong>FERAUD Dimitri</strong> : Admin Réseau, Dev Frontend</li>
+                                <li><strong>GRANDY Morgan</strong> : Dev Backend, Cybersécurité</li>
+                            </ul>
+                            <h3>Objectifs du Projet</h3>
+                            <ul>
+                                <li>Faciliter l’accès aux produits locaux (interface simple, intuitive)</li>
+                                <li>Soutenir les producteurs régionaux (vente digitale, gestion logistique)</li>
+                                <li>Favoriser une consommation responsable (qualité, authenticité)</li>
+                            </ul>
+                            <h3>Fonctionnalités principales</h3>
+                            <ul>
+                                <li>Recherche de produits, commandes, avis, historique, listes personnalisées</li>
+                                <li>Carte interactive <strong>LocalO’Map</strong> (OpenStreetMap, géolocalisation, filtres)</li>
+                                <li>Chatbot IA (Botpress), FAQ</li>
+                                <li>Gestion de stock (Odoo), paiement (Stripe), sécurité (Cloudflare, RGPD)</li>
+                            </ul>
+                            <h3>Découpage du projet</h3>
+                            <ol>
+                                <li><strong>Conception</strong> : cahier des charges, architecture, wireframes</li>
+                                <li><strong>Développement</strong> : backend (MySQL, Stripe), frontend, intégrations, tests unitaires</li>
+                                <li><strong>Validation & Tests</strong> : fonctionnels, performance, sécurité, recettage</li>
+                                <li><strong>Déploiement</strong> : Docker, mise en production, suivi utilisateurs</li>
+                            </ol>
+                            <h3>Technologies & Outils</h3>
+                            <ul>
+                                <li>MySQL, Docker, Stripe, Cloudflare, Next.js, PHP 8.2, Node.js, Botpress, Odoo</li>
+                                <li>Diagramme de Gantt, GRAFCET pour la planification</li>
+                            </ul>
+                            <h3>Dates clés</h3>
+                            <ul>
+                                <li>01/03/2025 : Début conception</li>
+                                <li>01/04/2025 : Fin conception</li>
+                                <li>10/06/2025 : Fin développement initial</li>
+                                <li>15/06/2025 : Première version testable</li>
+                                <li>25/06/2025 : Recettage final</li>
+                                <li>01/07/2025 : Soutenance & mise en production</li>
+                            </ul>
+                            <h3>Contraintes & Adaptations</h3>
+                            <ul>
+                                <li>Délais académiques stricts (sprints courts, Agile)</li>
+                                <li>Technos imposées (PHP, Node.js, APIs)</li>
+                                <li>Budget limité (open-source, serveurs existants)</li>
+                                <li>Conformité RGPD, sécurité alimentaire</li>
+                                <li>Gestion dynamique des stocks (Odoo)</li>
                             </ul>
                         </div>
                     `;
@@ -546,6 +642,10 @@
             
             modalContent.innerHTML = content;
             modal.style.display = "block";
+            // Génère la galerie dans la modale
+            if (projectType === 'pokemon') {
+                renderPokemonGallery('modalPokemonGallery');
+            }
         }
     </script>
 </body>
